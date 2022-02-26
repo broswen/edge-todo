@@ -1,0 +1,26 @@
+name = "edge-todo"
+# type = "javascript" is required to use the `[build]` section
+type = "javascript"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+compatibility_date = "2022-02-26"
+
+kv_namespaces = [
+    { binding = "TODOS", id = "96b5c175a92640ecb0d92483c611adc3", preview_id = "61e8aba1423d4855adc8985513fe41e9" }
+]
+
+[build]
+command = "npm install && npm test && npm run build"
+[build.upload]
+# The "modules" upload format is required for all projects that export a Durable Objects class
+format = "modules"
+main = "./index.mjs"
+
+[durable_objects]
+bindings = [{name = "TODO", class_name = "TodoTs"}]
+
+[[migrations]]
+tag = "v1" # Should be unique for each entry
+new_classes = ["TodoTs"]

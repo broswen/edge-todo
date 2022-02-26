@@ -1,0 +1,33 @@
+{
+  "private": true,
+  "name": "edge-todo",
+  "version": "1.0.0",
+  "description": "",
+  "module": "./dist/index.mjs",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "jest",
+    "format": "prettier --write '**/*.{js,ts,css,json,md}'"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.4.0",
+    "@rollup/plugin-commonjs": "^21.0.2",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-typescript": "^8.3.1",
+    "@types/jest": "^27.4.1",
+    "isomorphic-fetch": "^3.0.0",
+    "jest": "^27.5.1",
+    "prettier": "^2.5.1",
+    "rollup": "^2.68.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^27.1.3",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "itty-router": "^2.4.10"
+  }
+}
